@@ -111,8 +111,8 @@ section {
     /* Updated href for logo to point to index.html */
 }
 
-.logo-img {
-    height: 24px;
+.header .logo-img {
+    height: 24px; /* Default size for header */
     width: auto;
 }
 
@@ -417,10 +417,83 @@ section {
 
 /* --- 7. Footer --- */
 
+/* --- 13. Structured Footer Styling --- */
+
+/* Reset the main footer padding/text alignment */
 .footer {
-    background-color: var(--color-hover);
+    padding: 3rem 0; 
+    text-align: left; /* Change from center to left */
+}
+
+/* Container for the 3-column layout */
+.footer-content {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 2.5rem; /* Space before copyright divider */
+    border-bottom: 1px solid #E0E0E0; /* Light divider line */
+    margin-bottom: 1.5rem; /* Space after divider */
+}
+
+.footer-logo {
+    flex-basis: 25%;
+    flex-shrink: 0;
+}
+
+.footer .footer-logo .footer-img {
+    height: 36px !important;
+    width: auto;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 0.5rem;
+    flex-basis: 25%;
+}
+
+.footer-links a {
     color: var(--color-text-secondary);
-    padding: 3rem 0;
-    text-align: center;
-    font-size: 0.85rem;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.footer-address {
+    flex-basis: 35%;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.footer-address strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: block; /* Make the name a block element for spacing */
+}
+
+.footer-copyright {
+    text-align: center; /* Center the copyright text */
+    padding: 0 2rem;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    .footer-logo, .footer-links, .footer-address {
+        flex-basis: 100%;
+    }
+    .footer-links {
+        align-items: center;
+    }
 }
