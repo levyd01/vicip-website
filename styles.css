@@ -1,0 +1,426 @@
+/* --- 1. Global Setup and Variables --- */
+
+:root {
+    /* Base Color Palette (Inverted from original site for white BG) */
+    --color-background: #FFFFFF;    /* White (Primary BG) */
+    --color-text-primary: #1A1A1A;  /* Near Black (Primary Text) */
+    --color-text-secondary: #555555;/* Dark Gray (Secondary Text/Details) */
+    --color-accent: #0077CC;        /* Bright Blue (Accent Color for links/buttons) */
+    --color-border: #EEEEEE;        /* Light Gray (Subtle dividers) */
+    --color-hover: #F8F8F8;         /* Very Light Gray (Hover effect BG/Card BG) */
+    --color-dark-bg: #1A1A1A;       /* Near Black (New Callout Background) */
+
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --font-size-base: 16px;
+}
+
+/* Reset basic margins and box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-body); /* Should now correctly load Roboto */
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* --- 2. Typography and Headings --- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading); /* Should now correctly load Poppins */
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+h1 { 
+    font-size: 3.5rem; 
+    /* Aggressively reduce space below the main title */
+    margin-bottom: 0.5rem; /* Reduced from original 0.5em to a smaller rem value */
+}
+h2 { font-size: 2.5rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.2em; }
+h3 { font-size: 1.75rem; }
+
+p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1em;
+    font-weight: 300; 
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #004A80; 
+    text-decoration: underline;
+}
+
+/* --- 3. Layout Structure (Containers and Sections) --- */
+
+.container {
+    /* Critical: Ensures it behaves like a centered box */
+    display: block !important; 
+    
+    max-width: 1200px !important; 
+    margin: 0 auto !important;    
+    padding: 0 2rem;
+}
+
+/* Moved specific dark-callout .container styling to its own section */
+
+section {
+    padding: 6rem 0; 
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+/* --- 4. Navigation Bar --- */
+
+.header {
+    background-color: var(--color-background);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+.logo { 
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+    /* Updated href for logo to point to index.html */
+}
+
+.logo-img {
+    height: 24px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex !important;
+    align-items: center;
+    gap: 2rem;
+    margin-left: auto; /* Push to right */
+    flex-shrink: 0; /* Prevent nav from shrinking */
+}
+
+.nav-links a {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* --- 5. Geometric/Card Elements --- */
+
+.card {
+    background-color: var(--color-hover); 
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    transition: background-color 0.3s ease;
+    min-height: 250px;
+}
+
+.card:hover {
+    background-color: var(--color-background);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.grid-2 {
+    display: grid;
+    /* Creates two columns of roughly equal size, adapting for smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+/* Optional: Minor adjustments for product card aesthetics */
+.product-card h3 {
+    min-height: 2.5em; /* Ensure headings align vertically */
+}
+
+/* --- 6. Buttons and CTAs --- */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-background); 
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #005A99; 
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-background); /* White text */
+    border: 2px solid var(--color-accent); /* Blue border */
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-accent); 
+    color: var(--color-background);
+    text-decoration: none;
+}
+
+/* --- 8. Specific Hero Section Styling (FIXED FOR GAP) --- */
+.hero {
+    /* REMOVED: min-height: 80vh; - This was the primary cause of the gap. */
+    
+    /* Using padding-top/bottom to control space instead of min-height */
+    padding-top: 6rem; 
+    padding-bottom: 2rem !important; /* Small padding kept for minimal separation */
+    
+    /* Ensure the section behaves normally */
+    display: block; /* Changed from flex for simpler layout when no min-height */
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    /* This margin is now effective */
+    margin-bottom: 1rem; 
+    color: var(--color-text-primary); 
+}
+
+/* --- 9. FIXED DARK CALLOUT SECTION (Black Box Fix) --- */
+
+.dark-callout {
+    background-color: var(--color-background); /* WHITE background around the box */
+    padding: 6rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark-callout .container {
+    max-width: 900px;
+    width: 100%;
+    background-color: var(--color-dark-bg); /* BLACK background only for the box */
+    border-radius: 12px;
+    padding: 4rem 3rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark-callout .callout-title {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: none;
+}
+
+.dark-callout .callout-subtitle {
+    color: #CCCCCC;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.dark-callout .callout-content {
+    color: #E0E0E0;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+/* --- 10. Image Section Styling (Medium Size) --- */
+
+.image-section {
+    /* REDUCE THE GAP: Set a small top padding */
+    padding-top: 2rem; 
+    padding-bottom: 3rem; 
+    text-align: center; 
+    border-bottom: 1px solid var(--color-border);
+}
+
+.feature-image {
+    /* Define a medium size: max width for scaling, fixed height for consistency */
+    max-width: 80%; /* Allows image to scale down on smaller screens */
+    height: auto; 
+    max-height: 400px; /* Limits the vertical size for a medium appearance */
+    display: block; /* Makes margin: auto work */
+    margin: 0 auto; /* Centers the image */
+    border-radius: 8px; /* Optional: Soft rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Optional: Subtle shadow */
+}
+
+/* --- 11. NEW WHITE CALLOUT SECTION (Black Text on White Background) --- */
+.white-callout {
+    background-color: var(--color-background); /* White background for the section */
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Update this rule in styles.css */
+.white-callout .container {
+    /* AGGRESSIVE FIX: Force display: flex to override global .container */
+    display: flex !important; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 3rem; 
+    
+    /* Removed flex-wrap: nowrap to prevent horizontal scrolling */
+}
+
+/* Update this rule in styles.css */
+.white-callout-content {
+    /* Set a strict maximum width on the text block. 65% is safe. */
+    max-width: 65%; 
+    
+    /* Allow it to grow or shrink, but prioritize its size */
+    flex-basis: 65%;
+    flex-grow: 1; 
+    flex-shrink: 1; 
+    
+    text-align: left; 
+}
+/* Add a media query to force the button below the text on small screens (like phones) */
+@media (max-width: 800px) {
+    .white-callout .container {
+        flex-direction: column; /* Stack vertically on small screens */
+        text-align: center;
+    }
+    .white-callout-content {
+        flex-basis: 100%; /* Take up full width when stacked */
+        text-align: center;
+    }
+}
+
+.white-callout-content h2 {
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    border-bottom: none; /* Remove border from H2 in this section */
+}
+
+.white-callout-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: 0; /* No bottom margin if followed by a button or more text */
+}
+
+.white-callout .btn-primary {
+    flex-shrink: 0; /* Prevent the button from shrinking */
+    /* Using btn-primary, which is blue with white text */
+}
+
+/* --- 12. Contact Form Styling --- */
+/* --- 12. Contact Form Styling (REVISED FOR SIMPLE LAYOUT) --- */
+
+#contact-us .container {
+    max-width: 1000px !important; /* Slightly narrower container for focus */
+}
+
+.contact-layout {
+    margin-top: 3rem; 
+    align-items: flex-start; 
+}
+
+/* Style for the Left Column text */
+.contact-info h2 {
+    border-bottom: none; /* Remove the H2 border from this page's main title */
+}
+
+.contact-info .intro-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    color: var(--color-text-primary);
+}
+
+.contact-info .address-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.contact-info .address-text strong {
+    color: var(--color-text-primary);
+    font-weight: 700;
+    display: block; /* Make the title a block element */
+    margin-top: 1rem;
+}
+
+
+/* Style for the Right Contact Box */
+.contact-details-box {
+    /* Uses the .card styling */
+    padding: 2.5rem; 
+    height: fit-content; /* Ensure box doesn't stretch unnecessarily */
+}
+
+.contact-details-box h3 {
+    border-bottom: 2px solid var(--color-border); 
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-details-box p {
+    margin-bottom: 1.5rem;
+}
+
+.contact-details-box p strong {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+/* --- 7. Footer --- */
+
+.footer {
+    background-color: var(--color-hover);
+    color: var(--color-text-secondary);
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
