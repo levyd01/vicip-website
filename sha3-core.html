@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DBSX8DK7Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3DBSX8DK7Z');
+    </script>
+    <link rel="canonical" href="https://vic-ip.com/sha3-core.html" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHA3 and SHAKE IP core for PQC implementations. Supports SHA3-256/512 and SHAKE128/256, optimized for ML-KEM integration." />
+
+    <title>Vicip | SHA3/SHAKE IP Core for PQC</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="/" class="logo">
+                <img src="vicip_logo.png" alt="Vicip Logo" class="logo-img">
+            </a>
+            
+            <nav class="nav-links">
+                <a href="products.html">PRODUCTS</a>
+                <a href="industries.html">INDUSTRIES</a>
+                <a href="resources.html">RESOURCES</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>SHA3/SHAKE IP Core</h1>
+            <p>Hardware core for SHA3-256, SHA3-512, SHAKE128, and SHAKE256 - designed specifically for PQC integration.</p>
+        </div>
+    </section>
+
+    <section class="product-listing">
+        <div class="container">
+            <div class="grid-2">
+                <div class="card product-card">
+                    <h3>SHA3-256 & SHA3-512</h3>
+                    <p>Fixed-output hash functions compliant with FIPS 202. Suitable for general hashing requirements and as building blocks in larger cryptographic systems.</p>
+                </div>
+
+                <div class="card product-card">
+                    <h3>SHAKE128 & SHAKE256</h3>
+                    <p>Extendable-output functions (XOF) as specified in FIPS 202. Essential components for PQC algorithms including:</p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>ML-KEM (Kyber) - for pseudorandom sampling</li>
+                        <li>ML-DSA (Dilithium) - for expander functions</li>
+                        <li>FN-DSA (Falcon) - for key generation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card product-card" style="margin-top: 2rem; background-color: var(--color-hover);">
+                <h3 style="color: var(--color-accent);">Strategic Building Block for PQC</h3>
+                <p>This SHA3/SHAKE core was developed primarily as a foundational component for our upcoming ML-KEM hardware implementation. It is optimized for integration and currently available:</p>
+                <ul style="margin: 1rem 0 1rem 1.5rem;">
+                    <li>As a sub-component in custom PQC development projects</li>
+                    <li>As part of a future complete ML-KEM IP solution</li>
+                    <li>For customization to include AXI4 interfaces or other bus standards</li>
+                </ul>
+                <p><strong>Note:</strong> This core is offered primarily for integration into larger systems. Standalone licensing is available but limited to SHA3-256/512 and SHAKE128/256 variants only (no 224/384 support).</p>
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">DISCUSS INTEGRATION OPTIONS</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <a href="/"> <img src="vicip_logo.png" alt="Vicip Logo" class="footer-img">
+                </a>
+            </div>
+
+            <div class="footer-links">
+                <a href="products.html">Products</a>
+                <a href="industries.html">Industries</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-address">
+                <strong>Vicip Ltd.</strong><br>
+                Karyatidon 9, Apt 102<br>
+                Larnaca 6042, Cyprus<br><br>
+                CID Number: HE 455615<br>
+                TAX ID: CY60043877H
+            </div>
+        </div>
+
+        <div class="container footer-copyright">
+            &copy; 2026 Vicip. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
