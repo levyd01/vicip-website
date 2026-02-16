@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DBSX8DK7Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-3DBSX8DK7Z');
+    </script>
+    <link rel="canonical" href="https://vic-ip.com/ascon.html" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASCON IP core: NIST-standard lightweight cryptography for hardware. AEAD, Hash, and XOF implementations optimized for FPGA and ASIC." />
+
+    <title>Vicip | ASCON IP Core - NIST Lightweight Cryptography</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="/" class="logo">
+                <img src="vicip_logo.png" alt="Vicip Logo" class="logo-img">
+            </a>
+            
+            <nav class="nav-links">
+                <a href="products.html">PRODUCTS</a>
+                <a href="industries.html">INDUSTRIES</a>
+                <a href="resources.html">RESOURCES</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>ASCON IP Core: NIST Lightweight Cryptography Standard</h1>
+            <p>
+                High-performance, NIST-standard ASCON IP cores for FPGA and ASIC. 
+                RTL implementations of the authenticated encryption and hashing algorithms 
+                optimized for area, power, and throughput.
+            </p>
+        </div>
+    </section>
+
+    <section class="image-section">
+        <div class="container">
+            <img src="title_image.png" alt="ASCON hardware security concept" class="feature-image">
+        </div>
+    </section>
+
+    <section class="dark-callout">
+        <div class="container"> 
+            <h2 class="callout-title">The New Standard in Lightweight Cryptography</h2>
+            <p class="callout-subtitle">In 2023, the ASCON family was selected by NIST as the standard for Lightweight Cryptography (LWC).</p>
+            <div class="callout-content">
+                <p>Designed for resource-constrained devices (IoT, embedded systems, RFIDs) and high-performance scenarios requiring robust, efficient security, ASCON provides authenticated encryption with associated data (AEAD) and hashing functions.</p>
+                <p>Vicip offers a suite of hardware IP cores that implement the ASCON algorithm. Our RTL designs allow you to seamlessly integrate NIST-standard security into your silicon or FPGA design with minimal overhead.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-listing">
+        <div class="container">
+            <h2>Why Choose Vicip's ASCON IP?</h2>
+            
+            <div class="grid-2">
+                <div class="card product-card">
+                    <h3>NIST Compliance</h3>
+                    <p>Full compliance with the final NIST Lightweight Cryptography standard (NIST IR 8454), ensuring your product meets the latest federal security guidelines.</p>
+                </div>
+
+                <div class="card product-card">
+                    <h3>Optimized Architectures</h3>
+                    <p>We offer multiple core configurations to suit your design goals: Area-Optimized for minimal gate count, or High-Throughput with pipelined architectures for high-speed data processing.</p>
+                </div>
+
+                <div class="card product-card">
+                    <h3>Easy Integration</h3>
+                    <p>Clean, synchronous RTL (Verilog) with well-documented interfaces. AMBA AXI4/AXI4-Stream or simple FIFO interfaces available.</p>
+                </div>
+
+                <div class="card product-card">
+                    <h3>Side-Channel Resistance</h3>
+                    <p>Options for hardened cores with countermeasures against power analysis and electromagnetic attacks (available upon request).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="white-callout">
+        <div class="container">
+            <h2>Core Functions Available</h2>
+            <p>Our ASCON IP portfolio can be licensed as individual modules or as a combined package.</p>
+        </div>
+    </section>
+
+    <section class="product-listing">
+        <div class="container">
+            <div class="grid-2">
+                <div class="card product-card">
+                    <h3>ASCON-AEAD Encoder</h3>
+                    <p><strong>Authenticated Encryption with Associated Data</strong></p>
+                    <p>Implements ASCON-128 and ASCON-128a for encryption. Provides confidentiality, integrity, and authenticity in a single pass. Ideal for secure IoT communication links, secure boot, and firmware authentication.</p>
+                    <a href="NIST_Ascon_AEAD_Encoder.pdf" class="btn btn-primary">Encoder Datasheet</a>
+                </div>
+    
+                <div class="card product-card">
+                    <h3>ASCON-AEAD Decoder</h3>
+                    <p><strong>Authenticated Decryption with Associated Data</strong></p>
+                    <p>Implements ASCON-128 and ASCON-128a for decryption. Perfect companion to the encoder core for complete secure communication channels requiring hardware-accelerated authentication and decryption.</p>
+                    <a href="NIST_Ascon_AEAD_Decoder.pdf" class="btn btn-primary">Decoder Datasheet</a>
+                </div>
+            </div>
+            
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="card product-card">
+                    <h3>ASCON Hash/XOF/CXOF</h3>
+                    <p><strong>Cryptographic Hashing / Extendable Output Functions</strong></p>
+                    <p>Multi-mode core implementing ASCON-HASH256, ASCON-HASHA, ASCON-XOF128, and ASCON-CXOF128. Complete hashing suite for digital signatures, integrity checks, and random number generation.</p>
+                    <a href="NIST_Ascon_Hash.pdf" class="btn btn-primary">Hash Datasheet</a>
+                </div>
+                <div class="card product-card" style="display: flex; flex-direction: column; justify-content: center; background-color: var(--color-hover);">
+                    <h3 style="color: var(--color-accent);">Need all three?</h3>
+                    <p>We offer combined licensing packages for the complete ASCON suite. Contact us for bundle pricing.</p>
+                    <a href="contact.html" class="btn btn-primary" style="align-self: flex-start;">INQUIRE ABOUT BUNDLES</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="industry-list">
+        <div class="container">
+            <h2>Target Applications</h2>
+            <p>Integrate our ASCON IP into your next-generation designs for:</p>
+            
+            <div class="grid-2">
+                <div class="card industry-card">
+                    <h3>IoT & Edge Devices</h3>
+                    <p>Secure sensor data transmission and device authentication with minimal power and area overhead.</p>
+                </div>
+
+                <div class="card industry-card">
+                    <h3>Automotive</h3>
+                    <p>Secure in-vehicle communication (CAN FD, Ethernet) and V2X with NIST-standard lightweight cryptography.</p>
+                </div>
+                
+                <div class="card industry-card">
+                    <h3>Consumer Electronics</h3>
+                    <p>Low-power security for wearables, smart home devices, and personal medical gadgets.</p>
+                </div>
+
+                <div class="card industry-card">
+                    <h3>Industrial Control</h3>
+                    <p>Protecting critical infrastructure communication protocols with hardware-accelerated security.</p>
+                </div>
+
+                <div class="card industry-card">
+                    <h3>RFID & Smart Tags</h3>
+                    <p>Ultra-low power authentication for supply chain security, access control, and inventory management.</p>
+                </div>
+
+                <div class="card industry-card">
+                    <h3>5G Telecommunications</h3>
+                    <p>Lightweight authentication for massive machine-type communications (mMTC) in cellular networks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark-callout">
+        <div class="container">
+            <h2>Ready to secure your design?</h2>
+            <p>Not sure which configuration (area vs. speed) is right for your application? Our engineering team can help you select the right core and provide synthesis numbers for your target technology.</p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="resources.html" class="btn btn-secondary">TECHNICAL RESOURCES</a>
+                <a href="contact.html" class="btn btn-primary">CONTACT ENGINEERING</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <a href="/"> <img src="vicip_logo.png" alt="Vicip Logo" class="footer-img">
+                </a>
+            </div>
+
+            <div class="footer-links">
+                <a href="products.html">Products</a>
+                <a href="industries.html">Industries</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-address">
+                <strong>Vicip Ltd.</strong><br>
+                Karyatidon 9, Apt 102<br>
+                Larnaca 6042, Cyprus<br><br>
+                CID Number: HE 455615<br>
+                TAX ID: CY60043877H
+            </div>
+        </div>
+
+        <div class="container footer-copyright">
+            &copy; 2025 Vicip. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

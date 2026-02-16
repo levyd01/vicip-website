@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Post-quantum cryptography hardware IP cores including Ascon AEAD, Hash, and XOF. NIST-compliant lightweight security for IoT, automotive, and embedded systems." />
 
-    <title>Vicip | Our Products</title>
+    <title>Vicip | Hardware Security IP Products</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     
@@ -38,43 +38,64 @@
         </div>
     </header>
         
-    <section id="products" class="product-listing">
+    <section class="hero">
         <div class="container">
             <h1>Post-Quantum Hardware Security IP Products</h1>
-
-            <h2>Why Ascon for Hardware Security?</h2>
             <p>
-            Ascon is the NIST-selected lightweight cryptography standard for authenticated encryption and hashing. 
-            It is optimized for hardware implementations requiring low area, low power, and high security guarantees.
+                Vicip offers a complete portfolio of NIST-standard cryptography IP cores 
+                for FPGA and ASIC implementation. All our products are verified, 
+                optimized, and ready for integration.
             </p>
+        </div>
+    </section>
 
-            <h2>Our Post-Quantum Hardware IP Cores</h2>
+    <section class="dark-callout">
+        <div class="container">
+            <h2 class="callout-title">ASCON: The NIST Lightweight Cryptography Standard</h2>
+            <p class="callout-subtitle">In 2023, NIST selected the ASCON family as the global standard for lightweight cryptography.</p>
+            <div class="callout-content">
+                <p>ASCON is optimized for hardware implementations requiring low area, low power, and high security guarantees. It is the ideal solution for IoT, automotive, embedded systems, and any application where resources are constrained but security cannot be compromised.</p>
+            </div>
+            <a href="ascon.html" class="btn btn-secondary">EXPLORE ASCON IP CORE FAMILY →</a>
+        </div>
+    </section>
+
+    <section id="products" class="product-listing">
+        <div class="container">
+            <h2>Our ASCON IP Core Family</h2>
+            <p>The complete NIST-standard ASCON portfolio, available for license today.</p>
             
             <div class="grid-2">
                 <div class="card product-card">
-                    <h3>Ascon Authenticated Encryption with Associated Data IP</h3>
-                    <p>The Ascon-AD128-ENC core is a high-efficiency hardware IP that implements the NIST Lightweight Cryptography Standard (2023) for robust authenticated encryption. Designed specifically for constrained environments like IoT and embedded systems, it offers high configurability, AXI interfaces, and optional side-channel resistance for optimal security and performance with minimal resource utilization.</p>
-                    <a href="NIST_Ascon_AEAD_Encoder.pdf" class="btn btn-primary">Datasheet</a>
+                    <h3>ASCON-AEAD Encoder IP</h3>
+                    <p>The Ascon-AD128-ENC core implements authenticated encryption with associated data per NIST LWC standard. Features high configurability, AXI interfaces, and optional side-channel resistance with minimal resource utilization.</p>
+                    <a href="ascon.html" class="btn btn-primary">VIEW DATASHEET & DETAILS →</a>
                 </div>
+    
+                <div class="card product-card">
+                    <h3>ASCON-AEAD Decoder IP</h3>
+                    <p>The Ascon-AD128-DEC core implements authenticated decryption with associated data. Perfect companion to the encoder core for complete secure communication channels.</p>
+                    <a href="ascon.html" class="btn btn-primary">VIEW DATASHEET & DETAILS →</a>
+                </div>
+            </div>
+    
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="card product-card">
+                    <h3>ASCON Hash/XOF/CXOF IP</h3>
+                    <p>Multi-mode core implementing ASCON-Hash256, ASCON-XOF128, and ASCON-CXOF128. Complete hashing suite for digital signatures, integrity checks, and random number generation.</p>
+                    <a href="ascon.html" class="btn btn-primary">VIEW DATASHEET & DETAILS →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="card product-card">
-                    <h3>Ascon Authenticated Decryption with Associated Data IP</h3>
-                    <p>The Ascon-AD128-DEC core is a high-efficiency hardware IP that implements the NIST Lightweight Cryptography Standard (2023) for robust authenticated decryption. Designed specifically for constrained environments like IoT and embedded systems, it offers high configurability, AXI interfaces, and optional side-channel resistance for optimal security and performance with minimal resource utilization.</p>
-                    <a href="NIST_Ascon_AEAD_Decoder.pdf" class="btn btn-primary">Datasheet</a>
-                </div>
-                
+    <section class="white-callout">
+        <div class="container">
+            <div class="white-callout-content">
+                <h2>Coming Soon: Additional PQC Algorithms</h2>
+                <p>Vicip is actively developing hardware IP cores for other NIST-selected Post-Quantum Cryptography standards. Contact us for early access or custom development.</p>
             </div>
-            <div class="grid-2">
-                <div class="card product-card">
-                    <h3>Ascon Hash/XOF/CXOF Function IP</h3>
-                    <p>The Ascon-Hash/XOF/CXOF core is a high-efficiency hardware IP implementing the NIST Lightweight Cryptography Standard (2023/2024). It provides a complete hashing suite including the Ascon-Hash256 fixed-length algorithm, the Ascon-XOF128 extendable-output function, and the Ascon-CXOF128 customized extendable-output function. Designed for constrained environments like IoT and embedded systems, this multi-mode core offers high configurability, AXI interfaces, and optional side-channel resistance—delivering optimal security and performance with minimal resource utilization.</p>
-                    <a href="NIST_Ascon_Hash.pdf" class="btn btn-primary">Datasheet</a>
-                </div>
-                <div class="card product-card">
-                </div>
-                
-            </div>
-            
+            <a href="contact.html" class="btn btn-primary">INQUIRE ABOUT CUSTOM IP</a>
         </div>
     </section>
 
@@ -95,17 +116,16 @@
             <div class="footer-address">
                 <strong>Vicip Ltd.</strong><br>
                 Karyatidon 9, Apt 102<br>
-                Larnaca 6042, Cyprus<br>
-                                     <br>
+                Larnaca 6042, Cyprus<br><br>
                 CID Number: HE 455615<br>
                 TAX ID: CY60043877H
             </div>
         </div>
 
         <div class="container footer-copyright">
-            &copy; 2025 Vicip. All rights reserved.
-        </div>
-    </footer>
+            &copy; 2025 Vicip. All rights reserved.
+        </div>
+    </footer>
 
 </body>
 </html>
