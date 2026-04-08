@@ -216,7 +216,12 @@
 
                     <div class="highlight-box">
                         <h3>Key architectural constraints</h3>
-                        <p>Single DSP/multiplier throughout the design — no parallel multiply units. BRAM usage kept to a minimum. LUT footprint optimised at the architectural level, not just through synthesis flags. The same philosophy applies across all Vicip products, including Ascon.</p>
+                        <p>
+                          Single DSP/multiplier throughout the design — no parallel multiply units. BRAM usage kept to a minimum. LUT footprint optimised at the architectural level, not just through synthesis flags. The same philosophy applies across all Vicip products.
+                        </p>
+                        <p>
+                          Polynomial arithmetic in ML-KEM operates in a modular domain. Vicip implements this using Montgomery multiplication, allowing all modular reductions to be handled by a single, area-efficient multiplier unit.
+                        </p>
                     </div>
 
                     <h2>Implementation Results</h2>
