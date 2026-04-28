@@ -14,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="canonical" href="https://vic-ip.com/ml-kem.html" />
-    <meta name="description" content="ML-KEM (FIPS 203) preliminary Key Generation RTL implementation results on Xilinx 7-Series FPGA. Single-multiplier, low-resource design: 11,793 LUTs, 33 MHz, ~350 µs latency." />
-
-    <title>ML-KEM Key Generation RTL — FIPS 203 Progress | Vicip</title>
+    <meta name="description" content="ML-KEM (FIPS 203) Key Generation and Encapsulation RTL results. High-performance, low-resource design: 12,887 LUTs, 76.9 MHz, verified on Xilinx 7-Series." />
+    
+    <title>ML-KEM RTL — KeyGen & Encapsulation Complete | Vicip</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -226,40 +226,41 @@
 
                     <h2>Implementation Results</h2>
                     <p>
-                        Synthesis and implementation were run against a Xilinx 7-Series target. Timing is clean at 33 MHz with no violations.
-                        Key Generation completes in approximately 10,500 clock cycles from assertion of start to done signal,
-                        giving an end-to-end latency of around <strong>350 µs</strong>.
+                        Synthesis and implementation were conducted against a Xilinx 7-Series target with 
+                        stringent SoC-integration timing constraints. The design achieves <strong>76.9 MHz (13ns)</strong> 
+                        timing closure, representing a 2.3x frequency improvement over previous iterations. 
+                        This allows for high-throughput PQC operations within a minimal area footprint.
                     </p>
 
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-value">11,793</div>
+                            <div class="stat-value">12,887</div>
                             <div class="stat-label">LUTs</div>
+                            <div class="stat-sub">KeyGen + Encaps</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">5.5</div>
-                            <div class="stat-label">Block RAM Tiles</div>
+                            <div class="stat-value">76.9 MHz</div>
+                            <div class="stat-label">Clock speed</div>
+                            <div class="stat-sub">13ns Period</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">33 MHz</div>
-                            <div class="stat-label">Clock</div>
-                            <div class="stat-sub">Timing clean</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">~350 µs</div>
+                            <div class="stat-value">~135 µs</div>
                             <div class="stat-label">KeyGen Latency</div>
-                            <div class="stat-sub">~10,500 cycles</div>
+                            <div class="stat-sub">~10,400 cycles</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">~316 µs</div>
+                            <div class="stat-label">Encaps Latency</div>
+                            <div class="stat-sub">~24,300 cycles</div>
                         </div>
                     </div>
 
                     <h2>What's Next</h2>
                     <p>
-                        Key Generation forms the foundation of the full KEM flow. The next development phases are
-                        Encapsulation (ML-KEM.Encaps, FIPS 203 §6.2) followed by Decapsulation (ML-KEM.Decaps, §6.3),
-                        after which a full integration and compliance verification pass will be conducted.
-                    </p>
-                    <p>
-                        We will publish updated resource utilisation and performance figures as each module reaches RTL completion.
+                        With Key Generation and Encapsulation (ML-KEM.Encaps) fully verified at 77 MHz, 
+                        development has officially commenced on <strong>Decapsulation (ML-KEM.Decaps, FIPS 203 §6.3)</strong>. 
+                        This final module will utilize the same single-multiplier architectural philosophy 
+                        to maintain our low-resource footprint across the full KEM flow.
                     </p>
 
                 </div>
