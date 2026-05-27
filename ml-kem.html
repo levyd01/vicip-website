@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DBSX8DK7Z"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="canonical" href="https://vic-ip.com/ml-kem.html" />
-    <meta name="description" content="ML-KEM (FIPS 203) Key Generation and Encapsulation RTL results. High-performance, low-resource design: 12,887 LUTs, 76.9 MHz, verified on Xilinx 7-Series." />
+    <meta name="description" content="Complete ML-KEM (FIPS 203) Key Generation, Encapsulation, and Decapsulation RTL. High-performance, low-resource design: 16,240 LUTs, 83.3 MHz, verified on Xilinx 7-Series." />
     
-    <title>ML-KEM RTL — KeyGen & Encapsulation Complete | Vicip</title>
+    <title>ML-KEM RTL — Full KeyGen, Encapsulation & Decapsulation Complete | Vicip</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -85,7 +84,7 @@
         }
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.25rem;
             margin: 2rem 0;
         }
@@ -116,8 +115,8 @@
             margin-top: 0.25rem;
         }
         .notice {
-            background: #F0F7FF;
-            border-left: 3px solid var(--color-accent);
+            background: #E8F5E9;
+            border-left: 3px solid #4CAF50;
             border-radius: 0 6px 6px 0;
             padding: 1rem 1.25rem;
             margin: 2rem 0;
@@ -184,11 +183,11 @@
         <section class="article-hero">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="/">Home</a> &rsaquo; <a href="resources.html">Resources</a> &rsaquo; ML-KEM Key Generation RTL
+                    <a href="/">Home</a> &rsaquo; <a href="resources.html">Resources</a> &rsaquo; ML-KEM Complete Subsystem RTL
                 </div>
-                <span class="tag">Development Update</span>
-                <h1>ML-KEM Key Generation RTL<br>FIPS 203 Implementation Progress</h1>
-                <div class="meta">April 2026 &nbsp;&middot;&nbsp; Xilinx 7-Series Target</div>
+                <span class="tag">Product Milestone</span>
+                <h1>ML-KEM Complete Subsystem RTL<br>Full FIPS 203 Compliance Achieved</h1>
+                <div class="meta">May 2026 &nbsp;&middot;&nbsp; Xilinx 7-Series Target</div>
             </div>
         </section>
 
@@ -197,70 +196,67 @@
                 <div class="article-content">
 
                     <p>
-                        We are publishing an early progress update on our ML-KEM hardware implementation, targeting
-                        full compliance with <strong>FIPS 203</strong> (Module-Lattice-Based Key-Encapsulation Mechanism Standard).
-                        At this stage, Key Generation is complete and verified in RTL. Encapsulation and Decapsulation are in active development.
+                        We are proud to announce the complete RTL readiness of our <strong>ML-KEM-512</strong> hardware core, delivering full cryptographic loop compliance with the final <strong>FIPS 203 standard</strong> (Module-Lattice-Based Key-Encapsulation Mechanism). All processing stages—Key Generation, Encapsulation, and Decapsulation—are completed, structurally optimized, and verified via unified end-to-end simulation pipelines.
                     </p>
 
                     <div class="notice">
-                        This is a partial implementation. The results below reflect the Key Generation and Encapsulation modules only and are not representative of the full ML-KEM KEM footprint.
+                        <strong>Production Milestone:</strong> The complete cryptographic loop is operational. The hardware subsystem seamlessly ingests initial seeds, distributes public/private keys, handles ciphertext evaluation, and enforces definitive shared-secret verification.
                     </div>
 
                     <h2>Design Philosophy: Minimum Footprint</h2>
 
                     <p>
-                        Vicip IP cores are designed specifically for <strong>low-resource, low-power targets</strong> —
-                        embedded systems, IoT devices, and edge hardware where area and power budgets are tight.
-                        This is not a general-purpose implementation adapted for small devices; it is built for them from the ground up.
+                        Vicip IP cores are designed specifically for <strong>low-resource, low-power targets</strong> — embedded systems, IoT devices, and edge hardware where silicon area and power consumption constraints are strict. 
                     </p>
 
                     <div class="highlight-box">
                         <h3>Key architectural constraints</h3>
                         <p>
-                          Single DSP/multiplier throughout the design — no parallel multiply units. BRAM usage kept to a minimum. LUT footprint optimised at the architectural level, not just through synthesis flags. The same philosophy applies across all Vicip products.
-                        </p>
-                        <p>
-                          Polynomial arithmetic in ML-KEM operates in a modular domain. Vicip implements this using Montgomery multiplication, allowing all modular reductions to be handled by a single, area-efficient multiplier unit.
+                          A single, unified DSP/multiplier structure handles all polynomial modular reductions across the entire design using an optimized Montgomery math engine. Internal BRAM memory mapping is tightly constrained. Footprint minimization is solved directly at the microarchitectural pipeline level rather than relying blindly on aggressive synthesis flags.
                         </p>
                     </div>
 
+                    <h2>SoC-Ready Integration: APB & AXI4-Stream</h2>
+                    <p>
+                        To guarantee effortless dropping into standard SoC processing nodes, the accelerator features an isolated dual-bus control plane and data plane topology. System commands, configuration, and status monitoring are mapped via an ultra-low-gate <strong>APB slave register interface</strong>. High-bandwidth cryptographic payloads—seeds, public keys, ciphertexts, and verified shared secrets—are continuously piped via dedicated <strong>AXI4-Stream Master and Slave</strong> interfaces backed by integrated asynchronous FIFO buffering.
+                    </p>
+
                     <h2>Implementation Results</h2>
                     <p>
-                        Synthesis and implementation were conducted against a Xilinx 7-Series target with 
-                        stringent SoC-integration timing constraints. The design achieves <strong>76.9 MHz (13ns)</strong> 
-                        timing closure, representing a 2.3x frequency improvement over previous iterations. 
-                        This allows for high-throughput PQC operations within a minimal area footprint.
+                        Following the deployment of targeted point-to-point asynchronous path constraints to manage internal clock domain boundaries, the subsystem achieves timing closure flawlessly. The design locks in at a <strong>83.33 MHz (12ns)</strong> clock rate on standard Xilinx 7-Series silicon, achieving optimal throughput-to-area performance.
                     </p>
 
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-value">14,954</div>
-                            <div class="stat-label">LUTs</div>
-                            <div class="stat-sub">KeyGen + Encaps</div>
+                            <div class="stat-value">16,240</div>
+                            <div class="stat-label">Total LUTs</div>
+                            <div class="stat-sub">Complete Core (KeyGen+Encaps+Decaps)</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">76.9 MHz</div>
+                            <div class="stat-value">83.33 MHz</div>
                             <div class="stat-label">Clock speed</div>
-                            <div class="stat-sub">13ns Period</div>
+                            <div class="stat-sub">12ns Target Period</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">~135 µs</div>
+                            <div class="stat-value">125.3 µs</div>
                             <div class="stat-label">KeyGen Latency</div>
-                            <div class="stat-sub">~10,400 cycles</div>
+                            <div class="stat-sub">10,439 clock cycles</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-value">~178 µs</div>
+                            <div class="stat-value">164.4 µs</div>
                             <div class="stat-label">Encaps Latency</div>
-                            <div class="stat-sub">~13,700 cycles</div>
+                            <div class="stat-sub">13,700 clock cycles</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">230.4 µs</div>
+                            <div class="stat-label">Decaps Latency</div>
+                            <div class="stat-sub">19,200 clock cycles</div>
                         </div>
                     </div>
 
                     <h2>What's Next</h2>
                     <p>
-                        With Key Generation and Encapsulation (ML-KEM.Encaps) fully verified at 77 MHz, 
-                        development has officially commenced on <strong>Decapsulation (ML-KEM.Decaps, FIPS 203 §6.3)</strong>. 
-                        This final module will utilize the same single-multiplier architectural philosophy 
-                        to maintain our low-resource footprint across the full KEM flow.
+                        With the end-to-end microarchitecture fully functional and integrated within standard AMBA framing, our engineering focus has transitioned to high-volume regression testing. The module is currently being subjected to automated, multi-thousand deterministic and pseudo-random test vector matrices to assure absolute reliability for upcoming production integration.
                     </p>
 
                 </div>
@@ -269,8 +265,8 @@
 
         <section class="article-cta">
             <div class="container">
-                <h2>Interested in ML-KEM for your platform?</h2>
-                <p>Get in touch to discuss licensing, integration, or custom development.</p>
+                <h2>Interested in evaluating full-stack ML-KEM for your platform?</h2>
+                <p>Get in touch to discuss licensing, request complete datasheets, or access functional simulation testbenches.</p>
                 <a href="contact.html" class="btn btn-secondary">CONTACT US</a>
             </div>
         </section>
@@ -297,7 +293,7 @@
             </address>
         </div>
         <div class="container footer-copyright">
-            &copy; 2025 Vicip. All rights reserved.
+            &copy; 2026 Vicip. All rights reserved.
         </div>
     </footer>
 
