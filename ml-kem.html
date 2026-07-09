@@ -6,25 +6,24 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-3DBSX8DK7Z');
     </script>
     <link rel="canonical" href="https://vic-ip.com/ml-kem.html" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="VIC-ML-KEM-512 IP Core: ACVP-validated FIPS 203 post-quantum cryptography accelerator. High-performance monolithic RTL optimized for low-resource FPGA and ASIC." />
+    <meta name="description" content="VIC-ML-KEM-X IP Core: ACVP-validated FIPS 203 post-quantum cryptography accelerator. High-performance monolithic RTL supporting dedicated 512, dedicated 768, and dynamic dual-mode configurations." />
 
-    <title>Vicip | ML-KEM PQC IP Core - NIST FIPS 203 Compliance</title>
+    <title>Vicip | VIC-ML-KEM-X PQC IP Core - NIST FIPS 203 Compliance</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles.css">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "VIC-ML-KEM-512 Cryptographic IP Core",
-      "description": "ACVP-validated FIPS 203 post-quantum cryptography accelerator. High-performance monolithic RTL optimized for low-resource FPGA and ASIC targets.",
+      "name": "VIC-ML-KEM-X Cryptographic IP Core",
+      "description": "ACVP-validated FIPS 203 post-quantum cryptography accelerator. High-performance monolithic RTL featuring pre-synthesis configuration profiles for standalone or runtime selectable dynamic dual-mode operations.",
       "brand": {
         "@type": "Brand",
         "name": "Vicip"
@@ -32,7 +31,6 @@
       "category": "Intellectual Property / Silicon IP Core"
     }
     </script>
-
 </head>
 <body>
 
@@ -53,9 +51,9 @@
 
     <section class="hero">
         <div class="container">
-            <h1>ML-KEM hardware IP Core: NIST Post-Quantum Cryptography Standard</h1>
+            <h1>VIC-ML-KEM-X Hardware IP Core: NIST Post-Quantum Cryptography Standard</h1>
             <p>
-                High-performance, ACVP-validated ML-KEM-512 IP core for FPGA and ASIC architectures. 
+                High-performance, ACVP-validated ML-KEM IP core for FPGA and ASIC architectures. 
                 Pure monolithic hardware RTL implementing full Key Generation, Encapsulation, and Decapsulation 
                 optimized strictly for area, power, and low mathematical block overhead.
             </p>
@@ -64,7 +62,7 @@
 
     <section class="image-section">
         <div class="container">
-            <img src="title_image.png" alt="ML-KEM post-quantum hardware security architecture" class="feature-image">
+            <img src="title_image.png" alt="VIC-ML-KEM-X post-quantum hardware security architecture" class="feature-image">
         </div>
     </section>
 
@@ -74,7 +72,7 @@
             <p class="callout-subtitle">NIST FIPS 203 defines the global milestone for secure asymmetric key exchange infrastructure.</p>
             <div class="callout-content">
                 <p>Designed to shield communication layers against emerging quantum-tier computing attacks, Module-Lattice-Based Key-Encapsulation Mechanisms (ML-KEM) represent a complete migration away from legacy RSA and Elliptic Curve systems. Enforcing post-quantum protection is now a critical compliance priority for modern interconnected systems.</p>
-                <p>Vicip delivers a production-ready, highly optimized hardware implementation of the ML-KEM-512 standard. Built entirely from scratch with zero third-party block dependencies, our architecture closes timing aggressively, allowing seamless drop-in integration into embedded edge networks and space payloads.</p>
+                <p>Vicip delivers a production-ready, highly optimized hardware implementation of the FIPS 203 standard. Built entirely from scratch with zero third-party block dependencies, our architecture closes timing aggressively, allowing seamless drop-in integration into embedded edge networks and space payloads.</p>
             </div>
         </div>
     </section>
@@ -96,7 +94,7 @@
 
                 <div class="card product-card">
                     <h3>Minimal DSP & Footprint Management</h3>
-                    <p>Consumes only 6 physical DSP blocks on standard FPGA fabric (1x variable, 5x constant multipliers) and fits into a lean 12.8k LUT profile, preserving high-value mathematical tiles for primary system applications.</p>
+                    <p>Consumes only 6 physical DSP blocks on standard FPGA fabric in its baseline profile and fits into a lean 12.7k LUT envelope, preserving high-value mathematical tiles for primary system applications.</p>
                 </div>
 
                 <div class="card product-card">
@@ -109,8 +107,8 @@
 
     <section class="white-callout">
         <div class="container">
-            <h2>Core Parameter Status & Availability</h2>
-            <p>Our post-quantum public-key architecture is stratified to meet immediate commercial baseline needs while supporting upcoming high-security integration roadmaps.</p>
+            <h2>Supported Configuration Modes</h2>
+            <p>Our post-quantum public-key architecture features a flexible pre-synthesis configuration framework, enabling developers to customize the physical footprint and software agility to precisely match target system profiles.</p>
         </div>
     </section>
 
@@ -118,13 +116,13 @@
         <div class="container">
             <div class="grid-2">
                 <div class="card product-card" style="background-color: #ffffff; border: 1px solid var(--color-border);">
-                    <h3>VIC-ML-KEM-512 Core</h3>
+                    <h3>Dedicated ML-KEM-512 Mode</h3>
                     <p><strong>Fully Production Ready & Validated for Delivery</strong></p>
-                    <p>Complete execution loop featuring localized temporal jitter countermeasures in the internal Keccak hashing lanes to elevate side-channel attack (SCA) resistance. Fully verified via comprehensive post-synthesis Gate-Level Simulations (GLS).</p>
+                    <p>Fully optimized for baseline quantum security, delivering the smallest possible silicon and memory footprint. Features localized temporal defenses in internal Keccak hashing lanes to elevate side-channel attack (SCA) resilience.</p>
                     
                     <ul style="margin: 1rem 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.6; color: var(--color-text-secondary);">
-                        <li><strong>Slice LUTs:</strong> 12,790</li>
-                        <li><strong>Slice Registers:</strong> 8,630</li>
+                        <li><strong>Slice LUTs:</strong> 12,739</li>
+                        <li><strong>Slice Registers:</strong> 8,631</li>
                         <li><strong>Dedicated DSP Slices:</strong> 6</li>
                         <li><strong>Block RAM (BRAM):</strong> 4.5 Units (4.8 kB net data)</li>
                         <li><strong>Timing Closure Target:</strong> 6.25 ns (160 MHz)</li>
@@ -133,17 +131,21 @@
                         <li><strong>Decapsulation Latency:</strong> 19,680 cycles (123 µs)</li>
                     </ul>
                     
-                    <a href="NIST_ML-KEM.pdf" class="btn btn-primary" style="margin-top: 1rem;">DOWNLOAD VIC-ML-KEM-512 DATASHEET</a>
+                    <a href="NIST_ML-KEM.pdf" class="btn btn-primary" style="margin-top: 1rem;">DOWNLOAD CORE DATASHEET</a>
                 </div>
     
-                <div class="card product-card" style="display: flex; flex-direction: column; justify-content: space-between; background-color: var(--color-hover);">
+                <div class="card product-card" style="display: flex; flex-direction: column; justify-content: space-between; background-color: var(--color-hover); border: 1px solid var(--color-border);">
                     <div>
-                        <h3 style="color: var(--color-accent);">VIC-ML-KEM-768 / 1024</h3>
-                        <p><strong>Extended Parameter Tiers Under Active Development</strong></p>
-                        <p>We are actively scaling our parameterized lattice processing state machines to natively support higher-tier quantum classification targets (Category 3 and Category 5 equivalent security thresholds).</p>
-                        <p>Our unified architecture ensures that upgrading from the 512 core to extended parameter variants maintains complete control-plane and data-plane interface stability, minimizing future engineering redesign costs.</p>
+                        <h3>Dedicated ML-KEM-768 Mode</h3>
+                        <p><strong>Hardwired Mid-Tier Quantum Security Profile</strong></p>
+                        <p>Statically instantiates a hardwired cryptographic matrix engine configured exclusively for standalone ML-KEM-768 (k=3) execution pipelines, removing resource dependencies associated with baseline operations.</p>
+                        <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
+                        
+                        <h3>Dynamic Dual-Mode Profile</h3>
+                        <p><strong>Runtime Selectable Multi-Tier Acceleration</strong></p>
+                        <p>Instantiates a versatile cryptographic subsystem supporting <strong>both ML-KEM-512 and ML-KEM-768</strong> execution loops. Shifting security thresholds is managed dynamically via integrated software configuration registers mapped directly onto the APB interface.</p>
                     </div>
-                    <a href="contact.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 1.5rem;">INQUIRE ABOUT ROADMAPS</a>
+                    <a href="contact.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 1.5rem;">REQUEST CONFIGURATION OPTIONS</a>
                 </div>
             </div>
         </div>
@@ -152,7 +154,7 @@
     <section class="industry-list">
         <div class="container">
             <h2>Target Applications</h2>
-            <p>Integrate our low-overhead, hardware-accelerated ML-KEM IP to protect critical edge communication channels:</p>
+            <p>Integrate our low-overhead, hardware-accelerated VIC-ML-KEM-X IP to protect critical edge communication channels:</p>
             
             <div class="grid-2">
                 <div class="card industry-card">
