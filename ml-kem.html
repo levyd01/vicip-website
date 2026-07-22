@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://vic-ip.com/ml-kem.html" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ACVP-validated FIPS 203 ML-KEM post-quantum cryptography hardware accelerator. High-performance RTL supporting dedicated 512, 768, and dynamic mode configurations." />
+    <meta name="description" content="ACVP-validated FIPS 203 ML-KEM post-quantum cryptography hardware accelerator. High-performance RTL supporting dedicated 512, 768, 1024, and dynamic multi-mode configurations." />
 
     <title>Vicip | VIC-ML-KEM-X PQC IP Core - NIST FIPS 203 Compliance</title>
     
@@ -23,7 +23,7 @@
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": "VIC-ML-KEM-X Cryptographic IP Core",
-      "description": "ACVP-validated FIPS 203 post-quantum cryptography accelerator. High-performance monolithic RTL featuring pre-synthesis configuration profiles for standalone or runtime selectable dynamic dual-mode operations.",
+      "description": "ACVP-validated FIPS 203 post-quantum cryptography accelerator. High-performance monolithic RTL featuring pre-synthesis configuration profiles for standalone (512, 768, or 1024) or runtime-selectable dynamic dual-mode and tri-mode operations.",
       "brand": {
         "@type": "Brand",
         "name": "Vicip"
@@ -86,6 +86,11 @@
                     <h3>100% ACVP Validated</h3>
                     <p>Meticulously verified down to a single bit; successfully passes 100% of the official NIST Automated Cryptographic Validation Program internal projection vector suites across all processing paths.</p>
                 </div>
+                
+                <div class="card product-card">
+                    <h3>Multi-Layered SCA Defenses</h3>
+                    <p>Engineered with targeted, low-overhead physical security countermeasures including dynamic 2-share Boolean masking during decapsulation comparison, randomized PWM coefficient execution shuffling, and continuous PRNG state mixing to defend against DPA, CPA, and fault insertion attacks.</p>
+                </div>
 
                 <div class="card product-card">
                     <h3>Pure Monolithic Hardware RTL</h3>
@@ -108,7 +113,7 @@
     <section class="white-callout">
         <div class="container">
             <h2>Supported Configuration Modes</h2>
-            <p>Our post-quantum public-key architecture features a flexible pre-synthesis configuration framework, enabling developers to customize the physical footprint and software agility to precisely match target system profiles.</p>
+            <p>Our post-quantum public-key architecture features a flexible pre-synthesis configuration framework, enabling developers to customize the physical footprint and software agility to precisely match target system profiles. <strong>All configuration profiles integrate our shared multi-layered SCA countermeasures</strong> — including 2-share Boolean comparison masking, coefficient execution shuffling, and dynamic PRNG jittering — ensuring consistent side-channel resilience across every security tier.</p>
         </div>
     </section>
 
@@ -118,11 +123,11 @@
                 <div class="card product-card" style="background-color: #ffffff; border: 1px solid var(--color-border);">
                     <h3>Dedicated ML-KEM-512 Mode</h3>
                     <p><strong>Fully Production Ready & Validated for Delivery</strong></p>
-                    <p>Fully optimized for baseline quantum security, delivering the smallest possible silicon and memory footprint. Features localized temporal defenses in internal Keccak hashing lanes to elevate side-channel attack (SCA) resilience.</p>
+                    <p>Fully optimized for baseline quantum security, delivering the smallest possible silicon and memory footprint while maintaining complete hardware-level side-channel resilience.</p>
                     
                     <ul style="margin: 1rem 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.6; color: var(--color-text-secondary);">
-                        <li><strong>Slice LUTs:</strong> 12,739</li>
-                        <li><strong>Slice Registers:</strong> 8,631</li>
+                        <li><strong>Slice LUTs:</strong> 12,341</li>
+                        <li><strong>Slice Registers:</strong> 7,678</li>
                         <li><strong>Dedicated DSP Slices:</strong> 6</li>
                         <li><strong>Block RAM (BRAM):</strong> 4.5 Units (4.8 kB net data)</li>
                         <li><strong>Timing Closure Target:</strong> 6.25 ns (160 MHz)</li>
@@ -141,16 +146,30 @@
                         <p>Statically instantiates a hardwired cryptographic matrix engine configured exclusively for standalone ML-KEM-768 (k=3) execution pipelines, removing resource dependencies associated with baseline operations.</p>
                         <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
                         
+                        <h3>Dedicated ML-KEM-1024 Mode</h3>
+                        <p><strong>Hardwired High-Assurance Quantum Security Profile</strong></p>
+                        <p>Statically instantiates a hardwired cryptographic matrix engine configured exclusively for standalone ML-KEM-1024 (k=4) execution pipelines — NIST's top post-quantum security category — for applications where the highest assurance level is required without lower-tier support.</p>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 1.5rem;">REQUEST CONFIGURATION OPTIONS</a>
+                </div>
+ 
+                <div class="card product-card" style="display: flex; flex-direction: column; justify-content: space-between; background-color: var(--color-hover); border: 1px solid var(--color-border);">
+                    <div>
                         <h3>Dynamic Dual-Mode Profile</h3>
                         <p><strong>Runtime Selectable Multi-Tier Acceleration</strong></p>
                         <p>Instantiates a versatile cryptographic subsystem supporting <strong>both ML-KEM-512 and ML-KEM-768</strong> execution loops. Shifting security thresholds is managed dynamically via integrated software configuration registers mapped directly onto the APB interface.</p>
+                        <hr style="border: 0; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
+ 
+                        <h3>Dynamic Tri-Mode Profile</h3>
+                        <p><strong>Runtime Selectable Full-Spectrum Acceleration</strong></p>
+                        <p>Instantiates the most versatile subsystem, supporting <strong>ML-KEM-512, ML-KEM-768, and ML-KEM-1024</strong> execution loops in a single engine. Security thresholds are switched dynamically at runtime via software configuration registers mapped directly onto the APB interface — ideal for platforms that must serve multiple assurance tiers from one silicon footprint.</p>
                     </div>
                     <a href="contact.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 1.5rem;">REQUEST CONFIGURATION OPTIONS</a>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <section class="industry-list">
         <div class="container">
             <h2>Target Applications</h2>
