@@ -75,6 +75,18 @@ section {
     transition: 0.2s;
 }
 
+.btn-placeholder {
+    width: 170px;
+    height: 48px;
+    flex: 0 0 170px;
+}
+
+@media (max-width: 600px) {
+    .btn-placeholder {
+        display: none;
+    }
+}
+
 /* --- Card Grid: Avoid Horizontal Scrolling --- */
 .grid-2 {
     display: grid;
