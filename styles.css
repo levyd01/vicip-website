@@ -51,6 +51,29 @@ body {
     padding: 0 1.5rem;
 }
 
+
+
+.logo-img {
+    height: 75px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    display: block;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
 section {
     padding: 4rem 0;
 }
