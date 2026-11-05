@@ -73,6 +73,10 @@ body {
     align-items: center;
 }
 
+.footer-img {
+    max-width: 120px;
+    height: auto;
+}
 
 section {
     padding: 4rem 0;
