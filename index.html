@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="canonical" href="https://vic-ip.com/" />
-    <meta name="description" content="ACVP-verified ML-KEM (FIPS 203) post-quantum cryptography hardware IP cores. Low-power, ultra-compact RTL for automotive, IoT, and embedded edge systems." />
+    <meta name="description" content="ACVP-verified ML-KEM (FIPS 203) and ML-DSA (FIPS 204) post-quantum cryptography hardware IP cores. Low-power, ultra-compact RTL for automotive, IoT, and embedded edge systems." />
 
     <title>Post-Quantum Cryptography Hardware IP Cores | Vicip</title>
     
@@ -32,6 +32,8 @@
         "RTL Development",
         "FIPS 203",
         "ML-KEM",
+        "FIPS 204",
+        "ML-DSA",
         "Ascon AEAD"
       ]
     }
@@ -126,11 +128,7 @@
                 <div class="white-callout-content">
                     <h2>VIC-ML-KEM-X (FIPS 203) Key Encapsulation IP Core — Fully Validated</h2>
                     <p>
-                        <p>
-                            <p>
-                                Our flexible VIC-ML-KEM-X hardware accelerator is production-ready, fully compliant with the definitive FIPS 203 standard, and 100% ACVP verified across all execution blocks. The monolithic public-key subsystem supports ML-KEM-1024, ML-KEM-768, and ML-KEM-512, available in five pre-synthesis configurations: standalone, area-optimized 512-only, 768-only, or 1024-only engines, or dynamic multi-mode cores — dual-mode (768/512) or tri-mode (1024/768/512) — switchable on the fly via APB register controls. All variants operate comfortably within high-frequency clock domains and feature low-overhead physical defenses — including 2-share Boolean comparison masking, randomized coefficient execution shuffling, and dynamic PRNG state-mixing — to safely eliminate localized Side-Channel Analysis (SCA) leakage profiles without sacrificing silicon efficiency.
-                            </p>
-                        </p>
+                        Our flexible VIC-ML-KEM-X hardware accelerator is production-ready, fully compliant with the definitive FIPS 203 standard, and 100% ACVP verified across all execution blocks. The monolithic public-key subsystem supports ML-KEM-1024, ML-KEM-768, and ML-KEM-512, available in five pre-synthesis configurations: standalone, area-optimized 512-only, 768-only, or 1024-only engines, or dynamic multi-mode cores — dual-mode (768/512) or tri-mode (1024/768/512) — switchable on the fly via APB register controls. All variants operate comfortably within high-frequency clock domains and feature low-overhead physical defenses — including 2-share Boolean comparison masking, randomized coefficient execution shuffling, and dynamic PRNG state-mixing — to safely eliminate localized Side-Channel Analysis (SCA) leakage profiles without sacrificing silicon efficiency.
                     </p>
                 </div>
                 <a href="products/ml-kem.html" class="btn btn-primary">VIEW ML-KEM CORE</a>
@@ -140,15 +138,17 @@
         <section class="white-callout">
             <div class="container">
                 <div class="white-callout-content">
-                    <h2>ML-DSA Hardware Development Update</h2>
+                    <h2>VIC-ML-DSA-X (FIPS 204) Digital Signature IP Core — ACVP Vector Validated</h2>
                     <p>
-                        Vicip has successfully completed the RTL implementation and ACVP compliance verification of both the
-                        <strong>ML-DSA Key Generation</strong> and <strong>Sign</strong> pipelines for the
-                        ML-DSA-44 parameter set, passing all 30 NIST ACVP public test vectors in pure execution mode.
+                        Vicip has successfully completed internal test suite validation against official NIST ACVP public test vectors for all three ML-DSA primitives — 
+                        <strong>KeyGen</strong>, <strong>Sign</strong>, and <strong>Verify</strong> (currently tested on the ML-DSA-44 parameter set). 
+                        Our implementation strictly enforces FIPS 204 boundary conditions, polynomial norm bounds, and hint delimiter 
+                        validations in hardware to deliver robust, malleability-resistant signature processing.
                     </p>
                     <p>
-                        With sign-off achieved for signing operations, hardware development is now actively progressing toward 
-                        the signature verification engine.
+                        With complete test vector sign-off achieved across all functional blocks, development is actively progressing to wrap 
+                        the core in standard <strong>APB and AXI system interfaces</strong> for SoC integration, followed by expanding support 
+                        to <strong>ML-DSA-65</strong> and <strong>ML-DSA-87</strong> parameter sets enabled by our modular RTL architecture.
                     </p>
                 </div>
                 <div class="btn-placeholder" aria-hidden="true"></div>
